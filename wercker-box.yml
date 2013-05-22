@@ -1,0 +1,5 @@
+name : ruby
+version : 0.0.12
+description : Stable ruby box
+inherits : wercker/ubuntu12.04-ruby1.9.3
+script : echo "noop"
