@@ -1,7 +1,65 @@
 name : ruby
-version : 0.0.13
+version : 0.0.14
 description : Stable ruby box
-inherits : wercker/ubuntu12.04-ruby1.9.3@0.0.3
+inherits : wercker/ubuntu12.04-ruby1.9.3@0.0.4
 type : main
-os : ubuntu@12.04
-script : echo "noop"
+platform : ubuntu@12.04
+
+box-detect:
+  priority : 100
+  version : 
+  detect:
+    - files:
+      - Gemfile
+      
+default-build:
+  ruby-on-rails:
+    priority: 100
+    detect:
+      - files:
+          - config
+    text-to-append: |
+      build:
+          # The steps that will be executed on build
+          steps:
+              # A step that executes `bundle install` command
+              - bundle-install
+              # A step that prepares the database.yml with settings from the database you defined in services
+              - rails-database-yml      
+              # A custom script step, name value is used in the UI
+              # and the code value contains the command that get executed
+              - script:
+                  name: echo ruby information
+                  code: |
+                      echo "ruby version $(ruby --version) running!"
+                      echo "from location $(which ruby)"
+                      echo -p "gem list: $(gem list)"      
+              # Add more steps here:
+              # - script:
+              #        name: rspec
+              #        script: bundle exec rspec
+  ruby:
+    priority : 50
+    detect:
+      - default: true
+    text-to-append: |
+      # Build definition
+      build:
+        # The steps that will be executed on build
+        steps:
+          # A step that executes `bundle install` command
+          - bundle-install 
+          
+          # A custom script step, name value is used in the UI
+          # and the code value contains the command that get executed
+          - script:
+              name: echo ruby information
+              code: |
+                echo "ruby version $(ruby --version) running!"
+                echo "from location $(which ruby)"
+                echo -p "gem list: $(gem list)"
+          
+          # Add more steps here:
+          #- script:
+          #    name: rspec
+          #    script: bundle exec rspec
