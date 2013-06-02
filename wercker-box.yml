@@ -4,7 +4,8 @@ description : Stable ruby box
 inherits : wercker/ubuntu12.04-ruby1.9.3@0.0.4
 type : main
 platform : ubuntu@12.04
-
+keywords:
+  - ruby
 box-detect:
   priority : 100
   version : 
