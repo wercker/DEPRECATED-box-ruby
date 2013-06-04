@@ -1,5 +1,5 @@
 name : ruby
-version : 0.0.16
+version : 0.0.17
 description : Stable ruby box
 inherits : wercker/ubuntu12.04-ruby1.9.3@0.0.5
 type : main
@@ -26,7 +26,7 @@ default-build:
               # A step that executes `bundle install` command
               - bundle-install
               # A step that prepares the database.yml with settings from the database you defined in services
-              - rails-database-yml      
+              #- rails-database-yml      
               # A custom script step, name value is used in the UI
               # and the code value contains the command that get executed
               - script:
