@@ -1,5 +1,5 @@
 name : ruby
-version : 0.0.17
+version : 0.0.18
 description : Stable ruby box
 inherits : wercker/ubuntu12.04-ruby1.9.3@0.0.5
 type : main
@@ -38,7 +38,7 @@ default-build:
               # Add more steps here:
               # - script:
               #        name: rspec
-              #        script: bundle exec rspec
+              #        code: bundle exec rspec
   ruby:
     priority : 50
     detect:
@@ -63,4 +63,4 @@ default-build:
           # Add more steps here:
           #- script:
           #    name: rspec
-          #    script: bundle exec rspec
+          #    code: bundle exec rspec
