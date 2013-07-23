@@ -1,5 +1,3 @@
-box-ruby
-========
 # Ruby box
 
 Stable ruby box
