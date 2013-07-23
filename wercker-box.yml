@@ -1,18 +1,18 @@
-name : ruby
-version : 0.0.18
-description : Stable ruby box
-inherits : wercker/ubuntu12.04-ruby1.9.3@0.0.5
-type : main
-platform : ubuntu@12.04
+name: ruby
+version: 0.0.19
+description: Stable ruby box
+inherits: wercker/ubuntu12.04-ruby1.9.3@0.0.5
+type: main
+platform: ubuntu@12.04
 keywords:
   - ruby
 box-detect:
-  priority : 100
-  version : 
+  priority: 100
+  version:
   detect:
     - files:
       - Gemfile
-      
+
 default-build:
   ruby-on-rails:
     priority: 100
@@ -26,7 +26,7 @@ default-build:
               # A step that executes `bundle install` command
               - bundle-install
               # A step that prepares the database.yml with settings from the database you defined in services
-              #- rails-database-yml      
+              #- rails-database-yml
               # A custom script step, name value is used in the UI
               # and the code value contains the command that get executed
               - script:
@@ -34,13 +34,13 @@ default-build:
                   code: |
                       echo "ruby version $(ruby --version) running"
                       echo "from location $(which ruby)"
-                      echo -p "gem list: $(gem list)"      
+                      echo -p "gem list: $(gem list)"
               # Add more steps here:
               # - script:
               #        name: rspec
               #        code: bundle exec rspec
   ruby:
-    priority : 50
+    priority: 50
     detect:
       - default: true
     text-to-append: |
@@ -49,8 +49,8 @@ default-build:
         # The steps that will be executed on build
         steps:
           # A step that executes `bundle install` command
-          - bundle-install 
-          
+          - bundle-install
+
           # A custom script step, name value is used in the UI
           # and the code value contains the command that get executed
           - script:
@@ -59,7 +59,7 @@ default-build:
                 echo "ruby version $(ruby --version) running"
                 echo "from location $(which ruby)"
                 echo -p "gem list: $(gem list)"
-          
+
           # Add more steps here:
           #- script:
           #    name: rspec
