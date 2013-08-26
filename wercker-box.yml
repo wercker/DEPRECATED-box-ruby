@@ -1,5 +1,5 @@
 name: ruby
-version: 0.0.20
+version: 0.0.21
 description: Stable ruby box
 inherits: wercker/ubuntu12.04-ruby1.9.3@0.0.5
 type: main
@@ -23,14 +23,17 @@ default-build:
       # Build definition
       # See the Rails section on the wercker devcenter:
       # http://devcenter.wercker.com/articles/languages/ruby/rails-heroku.html
+      # You will want to define your database as follows: 
+      # services:
+      #   - wercker/postgresql
+      # See more about services on our devcenter:
+      # http://devcenter.wercker.com/articles/services/
       build:
           # The steps that will be executed on build
           steps:
               # A step that executes `bundle install` command
               - bundle-install
-              # A step that prepares the database.yml with settings from the database you defined in services
-              # See more about services on our devcenter:
-              # http://devcenter.wercker.com/articles/services/
+              # A step that prepares the database.yml using the database in services
               #- rails-database-yml
               # A custom script step, name value is used in the UI
               # and the code value contains the command that get executed
