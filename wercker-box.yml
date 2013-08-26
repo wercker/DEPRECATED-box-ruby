@@ -1,5 +1,5 @@
 name: ruby
-version: 0.0.19
+version: 0.0.20
 description: Stable ruby box
 inherits: wercker/ubuntu12.04-ruby1.9.3@0.0.5
 type: main
@@ -20,12 +20,17 @@ default-build:
       - files:
           - config
     text-to-append: |
+      # Build definition
+      # See the Rails section on the wercker devcenter:
+      # http://devcenter.wercker.com/articles/languages/ruby/rails-heroku.html
       build:
           # The steps that will be executed on build
           steps:
               # A step that executes `bundle install` command
               - bundle-install
               # A step that prepares the database.yml with settings from the database you defined in services
+              # See more about services on our devcenter:
+              # http://devcenter.wercker.com/articles/services/
               #- rails-database-yml
               # A custom script step, name value is used in the UI
               # and the code value contains the command that get executed
@@ -45,6 +50,8 @@ default-build:
       - default: true
     text-to-append: |
       # Build definition
+      # See the Ruby section on the wercker devcenter: 
+      # http://devcenter.wercker.com/articles/languages/ruby.html
       build:
         # The steps that will be executed on build
         steps:
