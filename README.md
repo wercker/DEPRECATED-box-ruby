@@ -4,7 +4,7 @@ Stable ruby box
 
 # What's new
 
-- Inherit ubuntu12.04-ruby1.9.3 version 0.0.10
+- Inherit ubuntu12.04-ruby1.9.3 version 0.0.11
 
 # License
 
@@ -30,6 +30,10 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Changelog
+
+## 0.0.23
+
+- Inherit ubuntu12.04-ruby1.9.3 version 0.0.11
 
 ## 0.0.22
 
