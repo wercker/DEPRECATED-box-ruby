@@ -1,7 +1,7 @@
 name: ruby
-version: 0.0.23
+version: 1.0.0
 description: Stable ruby box
-inherits: wercker/ubuntu12.04-ruby1.9.3@0.0.11
+inherits: wercker/ubuntu12.04-ruby2.0.0@1.0.0
 type: main
 platform: ubuntu@12.04
 keywords:
